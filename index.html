@@ -501,6 +501,11 @@
             // ボーナス払いがあるか
             const isBonus = results.bmonth1 !== 0 || results.bmonth2 !== 0;
 
+            // パーセンテージの計算
+            const principalPercent = (results.advance / results.total * 100).toFixed(1);
+            const interestPercent = (results.interestAmount / results.total * 100).toFixed(1);
+            const dpayPercent = results.dpay > 0 ? (results.dpay / results.total * 100).toFixed(1) : 0;
+
             let html = `<h3>計算結果</h3>`;
 
             html += `
@@ -583,15 +588,15 @@
             <div class="progress-container">
                 <h4 class="font-semibold mb-2">お支払い総額の内訳</h4>
                 <div class="progress-bar">
-                    <div class="progress-segment principal" style="width: ${(results.advance/results.total*100).toFixed(1)}%">
-                        元金: ${(results.advance/results.total*100).toFixed(1)}%
+                    <div class="progress-segment principal" style="width: ${principalPercent}%">
+                        元金: ${principalPercent}%
                     </div>
-                    <div class="progress-segment interest" style="width: ${(results.interestAmount/results.total*100).toFixed(1)}%">
-                        手数料: ${(results.interestAmount/results.total*100).toFixed(1)}%
+                    <div class="progress-segment interest" style="width: ${interestPercent}%">
+                        手数料: ${interestPercent}%
                     </div>
                     ${results.dpay > 0 ? `
-                    <div class="progress-segment downpayment" style="width: ${(results.dpay/results.total*100).toFixed(1)}%">
-                        頭金: ${(results.dpay/results.total*100).toFixed(1)}%
+                    <div class="progress-segment downpayment" style="width: ${dpayPercent}%">
+                        頭金: ${dpayPercent}%
                     </div>
                     ` : ''}
                 </div>
