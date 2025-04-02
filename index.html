@@ -171,52 +171,6 @@
             font-size: 20px;
             font-weight: bold;
         }
-        .progress-container {
-            margin-bottom: 16px;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 24px;
-            background-color: #e0e0e0;
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 8px;
-        }
-        .progress-segment {
-            height: 100%;
-            float: left;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        .principal {
-            background-color: #4b7bec;
-        }
-        .interest {
-            background-color: #e74c3c;
-        }
-        .downpayment {
-            background-color: #2ecc71;
-        }
-        .legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            font-size: 14px;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-        }
-        .color-box {
-            width: 12px;
-            height: 12px;
-            margin-right: 4px;
-        }
         .footer {
             margin-top: 24px;
             padding: 16px;
@@ -352,7 +306,7 @@
 
     <div class="footer">
         <p>
-            ※このシミュレーターは、オリジナルの計算機能に「手数料分の明示」と「グラフ表示」などの機能を追加した営業部用のツールです。
+            ※このシミュレーターは、オリジナルの計算機能に「手数料分の明示」などの機能を追加した営業部用のツールです。
         </p>
         <p>
             実際のお支払いについては、京都信販株式会社の最新のご案内をご確認ください。
@@ -501,11 +455,6 @@
             // ボーナス払いがあるか
             const isBonus = results.bmonth1 !== 0 || results.bmonth2 !== 0;
 
-            // パーセンテージの計算
-            const principalPercent = (results.advance / results.total * 100).toFixed(1);
-            const interestPercent = (results.interestAmount / results.total * 100).toFixed(1);
-            const dpayPercent = results.dpay > 0 ? (results.dpay / results.total * 100).toFixed(1) : 0;
-
             let html = `<h3>計算結果</h3>`;
 
             html += `
@@ -582,39 +531,6 @@
                             `${formatNumber(results.payment)}円（当社ご契約条件外）` : 
                             `${formatNumber(results.payment)}円`}</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="progress-container">
-                <h4 class="font-semibold mb-2">お支払い総額の内訳</h4>
-                <div class="progress-bar">
-                    <div class="progress-segment principal" style="width: ${principalPercent}%">
-                        元金: ${principalPercent}%
-                    </div>
-                    <div class="progress-segment interest" style="width: ${interestPercent}%">
-                        手数料: ${interestPercent}%
-                    </div>
-                    ${results.dpay > 0 ? `
-                    <div class="progress-segment downpayment" style="width: ${dpayPercent}%">
-                        頭金: ${dpayPercent}%
-                    </div>
-                    ` : ''}
-                </div>
-                <div class="legend">
-                    <div class="legend-item">
-                        <div class="color-box principal"></div>
-                        <span>元金: ${formatNumber(results.advance)}円</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="color-box interest"></div>
-                        <span>手数料: ${formatNumber(results.interestAmount)}円</span>
-                    </div>
-                    ${results.dpay > 0 ? `
-                    <div class="legend-item">
-                        <div class="color-box downpayment"></div>
-                        <span>頭金: ${formatNumber(results.dpay)}円</span>
-                    </div>
-                    ` : ''}
                 </div>
             </div>
             `;
