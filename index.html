@@ -37,9 +37,8 @@
             border-top: 2px solid #ca0028;
             border-bottom: 1px solid #e5e5e5;
         }
-        /* h3のスタイルも必要であれば追加 */
         h3 {
-            font-size: 18px; /* 例 */
+            font-size: 18px;
             font-weight: bold;
             margin-top: 24px;
             margin-bottom: 12px;
@@ -76,14 +75,14 @@
         .input-field label {
             display: block;
             margin-bottom: 4px;
-            font-weight: 600; /* ラベルを少し強調 */
+            font-weight: 600;
         }
         .input-field input, .input-field select {
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
             width: 200px;
-            box-sizing: border-box; /* paddingとborderをwidthに含める */
+            box-sizing: border-box;
         }
         .button-group {
             margin-top: 16px;
@@ -95,7 +94,7 @@
             border-radius: 4px;
             cursor: pointer;
             border: none;
-            font-size: 16px; /* ボタンの文字サイズ調整 */
+            font-size: 16px;
         }
         .btn-primary {
             background-color: #ca0028;
@@ -103,29 +102,30 @@
         }
         .btn-secondary {
             background-color: #e0e0e0;
-            color: #333; /* 文字色を明確に */
+            color: #333;
         }
         .note {
             font-size: 14px;
             color: #666;
-            margin-top: 16px; /* 上部にマージン追加 */
+            margin-top: 16px;
         }
         .note ul {
             padding-left: 20px;
-            margin-top: 8px; /* リストの上部にマージン追加 */
+            margin-top: 8px;
         }
         .results {
             background-color: white;
             padding: 16px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            margin-top: 24px; /* 上部にマージン追加 */
+            margin-top: 24px;
         }
         .warning {
             background-color: #fff3cd;
             border-left: 4px solid #ffc107;
             padding: 12px;
             margin-bottom: 16px;
+            color: #856404; /* 文字色を濃く */
         }
         .error {
             background-color: #f8d7da;
@@ -140,15 +140,15 @@
             gap: 16px;
             margin-bottom: 24px;
         }
-        .results-summary > div p:first-child { /* 既存の .font-semibold と同様のスタイルを適用 */
+        .results-summary > div p:first-child {
             font-weight: 600;
         }
-        .results-summary > div p:last-child { /* 既存の .text-lg と同様のスタイルを適用 */
-            font-size: 1.25rem; /* 20px相当 (htmlのフォントサイズが16pxの場合) */
-            font-weight: bold; /* 金額を強調 */
+        .results-summary > div p:last-child {
+            font-size: 1.25rem;
+            font-weight: bold;
         }
         .results-detail {
-            background-color: #ffeeee; /* 少し薄い赤系の背景 */
+            background-color: #ffeeee;
             padding: 16px;
             border-radius: 4px;
             margin-bottom: 24px;
@@ -156,15 +156,15 @@
         .detail-header {
             display: flex;
             justify-content: space-between;
-            align-items: center; /* 縦方向中央揃え */
-            margin-bottom: 12px; /* マージン調整 */
+            align-items: center;
+            margin-bottom: 12px;
         }
-        .detail-header p:first-child { /* 既存の .font-bold と同様のスタイルを適用 */
+        .detail-header p:first-child {
             font-weight: bold;
-            font-size: 1.1rem; /* 少し大きく */
+            font-size: 1.1rem;
         }
-        .detail-header p:last-child { /* 既存の .text-sm と同様のスタイルを適用 */
-            font-size: 0.875rem; /* 14px相当 */
+        .detail-header p:last-child {
+            font-size: 0.875rem;
         }
         table {
             width: 100%;
@@ -172,13 +172,13 @@
             margin-bottom: 16px;
         }
         th, td {
-            padding: 10px; /* パディング調整 */
+            padding: 10px;
             text-align: left;
             border: 1px solid #ddd;
         }
         th {
             background-color: #f0f0f0;
-            font-weight: 600; /* ヘッダーの文字を太く */
+            font-weight: 600;
         }
         td.amount {
             text-align: right;
@@ -188,7 +188,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
-            margin-top: 16px; /* 上部マージン */
+            margin-top: 16px;
         }
         @media (max-width: 768px) {
             .total-amounts {
@@ -201,7 +201,7 @@
         .total-item p:last-child {
             font-size: 20px;
             font-weight: bold;
-            color: #ca0028; /* 合計金額を強調 */
+            color: #ca0028;
         }
         .footer {
             margin-top: 24px;
@@ -210,24 +210,20 @@
             border-radius: 4px;
             font-size: 14px;
             color: #666;
-            text-align: center; /* 中央揃え */
+            text-align: center;
         }
-
-        /* JavaScript内で使われている未定義クラスの追加 */
         .font-semibold {
-            font-weight: 600 !important; /* 他のスタイルに上書きされないように */
+            font-weight: 600 !important;
         }
         .font-bold {
             font-weight: bold !important;
         }
         .text-lg {
-            font-size: 1.25rem !important; /* 約20px */
+            font-size: 1.25rem !important;
         }
         .text-sm {
-            font-size: 0.875rem !important; /* 約14px */
+            font-size: 0.875rem !important;
         }
-
-        /* 非表示用クラス */
         .hidden {
             display: none;
         }
@@ -374,34 +370,47 @@
         // 選択可能な回数
         const validFrequencies = [3, 6, 10, 12, 15, 18, 20, 24, 30, 36, 42, 48, 54, 60];
 
-        // 支払回数の適合チェック
-        function frequencyCheck(frequency) {
-            return validFrequencies.includes(Number(frequency));
-        }
+        // 支払回数の適合チェック (現在未使用だが残しておく)
+        // function frequencyCheck(frequency) {
+        //     return validFrequencies.includes(Number(frequency));
+        // }
 
         // 手数料率取得
-        function getRate(frequency) {
-            return frequencyRateTable[frequency];
+        function getRate(frequencyIndex) { // frequencyIndexは0基点
+            if (frequencyIndex >= 0 && frequencyIndex < frequencyRateTable.length) {
+                return frequencyRateTable[frequencyIndex];
+            }
+            return undefined; // 対応する手数料率がない場合
         }
 
-        // 現在の決済開始月を計算
+        // 現在の決済開始月を計算 (1-12の月を返す)
         function calcFDate() {
             const date = new Date();
             const today = date.getDate();
-            if (today <= 14) {
-                return (date.getMonth() + 1);
-            } else {
-                return ((date.getMonth() + 2) > 12 ? (date.getMonth() + 2) - 12 : (date.getMonth() + 2));
+            let paymentStartMonth;
+            if (today <= 14) { // 当月14日以前の申込は翌月27日引き落としと仮定 (支払開始は翌月)
+                paymentStartMonth = date.getMonth() + 1 + 1; // getMonthは0-11, +1で当月, さらに+1で翌月
+            } else { // 当月15日以降の申込は翌々月27日引き落としと仮定 (支払開始は翌々月)
+                paymentStartMonth = date.getMonth() + 1 + 2;
             }
+            // 月が12を超える場合の調整
+            if (paymentStartMonth > 12) {
+                paymentStartMonth = paymentStartMonth % 12;
+                if (paymentStartMonth === 0) paymentStartMonth = 12;
+            }
+            return paymentStartMonth;
         }
 
+
         // ボーナス支払い回数を計算
-        function calcBCount(frequency, bmonth1, bmonth2) {
+        function calcBCount(frequency, bmonth1, bmonth2, firstPaymentActualMonth) {
             let count = 0;
-            for (let i = 0; i < frequency; i++) {
-                let b = (calcFDate() + i) % 12;
-                b = b === 0 ? 12 : b;
-                if (b === Number(bmonth1) || b === Number(bmonth2)) {
+            if (Number(bmonth1) === 0 && Number(bmonth2) === 0) return 0; // ボーナス月指定なし
+
+            for (let i = 0; i < frequency; i++) { // iは支払いのオフセット (0回目, 1回目, ...)
+                let currentPaymentMonth = (firstPaymentActualMonth - 1 + i) % 12; // 0-11で計算
+                currentPaymentMonth = currentPaymentMonth + 1; // 1-12の月に戻す
+                if (currentPaymentMonth === Number(bmonth1) || currentPaymentMonth === Number(bmonth2)) {
                     count++;
                 }
             }
@@ -410,96 +419,213 @@
 
         // 数値のフォーマット
         function formatNumber(num) {
+            if (isNaN(num) || num === null) return "---";
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
-        // EMP（商品金額とお支払回数から）の計算
         document.getElementById('calculate-emp').addEventListener('click', calculateEMP);
         document.getElementById('reset-emp').addEventListener('click', resetEMP);
 
         function calculateEMP() {
-            // 入力値の取得
             const price = Number(document.getElementById('emp-price').value);
             const dpay = Number(document.getElementById('emp-dpay').value);
             const frequency = Number(document.getElementById('emp-frequency').value);
-            const bmonth1 = Number(document.getElementById('emp-bmonth1').value);
+            const bmonth1 = Number(document.getElementById('emp-bmonth1').value); // 文字列の場合があるのでNumberでキャスト
             const bmonth2 = Number(document.getElementById('emp-bmonth2').value);
             const baddpay = Number(document.getElementById('emp-baddpay').value);
 
-            // 入力チェック
-            if (price < 50000 || price > 10000000) {
-                alert('商品金額は5万円以上1,000万円以下で入力してください。');
-                return;
+            if (price < 50000 || price > 10000000) { alert('商品金額は5万円以上1,000万円以下で入力してください。'); return; }
+            if (!validFrequencies.includes(frequency)) { alert('選択されたお支払い回数はご利用いただけません。'); return;}
+            if (frequency <= 0) { alert('お支払回数は1回以上を選択してください。'); return; } // 通常はselectなので不要だが念のため
+
+            const advance = price - dpay;
+            if (advance < 0) { alert('頭金が商品金額を超えています。'); return; }
+            if (advance === 0 && frequency > 0) { // 全額頭金の場合
+                 displayEMPResults({ price, dpay, frequency, advance, interestRate: 0, interestAmount: 0, payment: 0, total: price, first: 0, rest: 0, bonus: 0, bcount:0, bmonth1, bmonth2, baddpay}); return;
+            }
+            if (advance < 100 && frequency > 1) { // 立替金が少額で分割する場合のハンドリング (例: 100円未満は分割不可など)
+                // alert('分割対象金額が少なすぎます。'); return;
             }
 
-            // 残金(立替額)
-            const advance = price - dpay;
 
-            // 手数料率
-            const interestRate = getRate(frequency - 1); // 配列のインデックス調整
+            const interestRate = getRate(validFrequencies.indexOf(frequency)); // validFrequenciesのインデックスで手数料率を取得
+            if (typeof interestRate === 'undefined') { alert('選択されたお支払回数に対応する手数料率がありません。'); return; }
 
-            // 手数料額
-            const interestAmount = Math.floor(advance * interestRate / 100); // 修正: *100 /10000 を /100 に (rateがパーセント表記ではないため)
-
-            // 分割支払金合計
+            const interestAmount = Math.floor(advance * interestRate / 100);
             const payment = advance + interestAmount;
+            const total = price + interestAmount; // 支払総額は 商品価格 + 分割手数料 (頭金は別途考慮)
 
-            // 支払総額 = 分割支払金合計 + 頭金
-            const total = payment + dpay;
+            let first = 0;
+            let rest = 0;
+            let bonus_val = 0; // ボーナス月の支払額 (rest + baddpay)
+            
+            const firstPaymentActualMonth = calcFDate();
+            const totalBonusPaymentsCount = calcBCount(frequency, bmonth1, bmonth2, firstPaymentActualMonth);
+            const hasActiveBonusAdd = (bmonth1 !== 0 || bmonth2 !== 0) && baddpay > 0 && totalBonusPaymentsCount > 0;
 
-            let first, rest, bonus = 0;
-            let bcount = 0;
+            if (!hasActiveBonusAdd) { // ボーナス加算なし (均等分割)
+                if (frequency === 1) {
+                    first = payment;
+                    rest = 0; bonus_val = 0;
+                } else {
+                    rest = Math.floor(payment / frequency / 100) * 100;
+                    first = payment - (rest * (frequency - 1));
+                    bonus_val = rest; // 加算がないので通常月と同じ
+                }
+            } else { // ボーナス加算あり
+                let normalPaymentCount = frequency - totalBonusPaymentsCount;
+                if (normalPaymentCount < 0) normalPaymentCount = 0; // 全てボーナス月の場合など
 
-            // 初回と通常回の分割支払金の算出
-            if (bmonth1 === 0 && bmonth2 === 0) { // ボーナス払いなし
-                rest = Math.floor(payment / frequency / 100) * 100;
-                first = payment - rest * (frequency - 1);
-            } else { // ボーナス払いあり
-                bcount = calcBCount(frequency, bmonth1, bmonth2);
-                if (baddpay === 0 && bcount > 0) { // ボーナス月指定のみで加算額なしの場合、均等割
-                     rest = Math.floor(payment / frequency / 100) * 100;
-                     first = payment - rest * (frequency - 1);
-                } else if (bcount > 0 && baddpay > 0) { // ボーナス月指定・加算額あり
-                    const normalPaymentsCount = frequency - bcount;
-                    if (normalPaymentsCount > 0) {
-                        rest = Math.floor((payment - bcount * baddpay) / normalPaymentsCount / 100) * 100;
-                        if (rest < 0) rest = 0; // 通常支払額がマイナスにならないように
-                        bonus = rest + baddpay;
-                         // 初回支払額の計算： (総支払額 - (通常支払額 * 通常支払回数) - (ボーナス加算額 * ボーナス回数)) + (初回がボーナスならボーナス加算、通常なら0)
-                        first = payment - (rest * (normalPaymentsCount -1)) - (bonus * (bcount)); //一旦これで計算し、端数を初回に乗せる
-                        
-                        // 再計算ロジック: 通常回とボーナス回を分けて計算し、最後に初回で調整
-                        let remainingForNormal = payment - (baddpay * bcount);
-                        if (remainingForNormal < 0) remainingForNormal = 0; // 全てボーナスで払いきる場合など
+                let baseForRestCalculation = payment - (baddpay * totalBonusPaymentsCount);
+                if (baseForRestCalculation < 0) baseForRestCalculation = 0; // 通常月の元金がマイナスにならないように
 
-                        if (normalPaymentsCount > 0) {
-                             rest = Math.floor(remainingForNormal / normalPaymentsCount / 100) * 100;
+                if (frequency > 0) {
+                     rest = Math.floor(baseForRestCalculation / frequency / 100) * 100;
+                } else { // frequency = 0 はありえないが
+                     rest = 0;
+                }
+                if (rest < 0) rest = 0; // 念のため
+
+                bonus_val = rest + baddpay;
+
+                if (frequency === 1) {
+                    first = payment; // 1回払いは全額初回
+                    // rest, bonus_val は2回目以降の定義なので0のまま or 初回がボーナスなら bonus_val = payment
+                    if(totalBonusPaymentsCount === 1) bonus_val = payment; else rest = payment;
+                } else {
+                    let sumOfPaymentsFrom2nd = 0;
+                    for (let k = 1; k < frequency; k++) { // kは支払回数インデックス (0=初回, 1=2回目, ...)
+                        let paymentMonthOffset = (firstPaymentActualMonth - 1 + k) % 12;
+                        let actualPaymentMonthForThisIteration = paymentMonthOffset + 1;
+
+                        if ((actualPaymentMonthForThisIteration === bmonth1 || actualPaymentMonthForThisIteration === bmonth2)) {
+                            sumOfPaymentsFrom2nd += bonus_val;
                         } else {
-                             rest = 0; // 通常支払回数がない場合
+                            sumOfPaymentsFrom2nd += rest;
                         }
-                        bonus = rest + baddpay;
-
-                        // 初回がボーナス月であるかどうか
-                        const isFirstPaymentBonusMonth = (calcFDate() === bmonth1 || calcFDate() === bmonth2);
-                        let totalCalculated = 0;
-                        if (isFirstPaymentBonusMonth) {
-                            totalCalculated = bonus + rest * (normalPaymentsCount) + bonus * (bcount - 1);
-                            first = bonus + (payment - totalCalculated);
-                        } else {
-                            if (normalPaymentsCount > 0) {
-                                totalCalculated = rest + rest * (normalPaymentsCount - 1) + bonus * bcount;
-                                first = rest + (payment - totalCalculated);
-                            } else { // 全てボーナス払いの場合
-                                totalCalculated = bonus * bcount;
-                                first = bonus + (payment - totalCalculated); // 初回もボーナス扱い
-                            }
-                        }
-                        // 通常支払額が3000円未満かチェック（ただし、ここでは単純化のためアラート等は省略）
-                        // if (rest < 3000 && normalPaymentsCount > 0) { // alert("注意：通常回の支払額が3000円未満です。"); }
-
-                    } else { // 全てボーナス払いの場合 (frequency === bcount)
-                        bonus = Math.floor(payment / bcount / 100) * 100;
-                        rest = 0; // 通常回なし
-                        first = payment - bonus * (bcount - 1);
                     }
-                } else { // ボー
+                    first = payment - sumOfPaymentsFrom2nd;
+                }
+            }
+            
+            // 最終チェック: firstが極端にマイナスなどになっていないか (通常は発生しないはず)
+            if (first < 0 && payment > 0) {
+                // このような状況は複雑な金利計算や入力条件で発生しうるが、今回のロジックでは考えにくい。
+                // 必要であれば、ここで rest や bonus_val を再調整して first を0以上に保つ処理を入れる。
+                // 例: first = 0 とし、差額を rest や bonus_val に按分するなど。
+                // 今回は警告にとどめるか、単純なエラーとして扱う。
+                // console.warn("初回支払額がマイナスになりました。計算ロジックを確認してください。", {first, rest, bonus_val, payment});
+            }
+
+
+            displayEMPResults({
+                price, dpay, frequency, advance, interestRate, interestAmount,
+                payment, total, first, rest, bonus: bonus_val,
+                bcount: totalBonusPaymentsCount, // 総ボーナス回数を渡す
+                bmonth1, bmonth2, baddpay
+            });
+        }
+
+        function displayEMPResults(results) {
+            const resultsDiv = document.getElementById('emp-results');
+            resultsDiv.classList.remove('hidden');
+            
+            const firstPaymentActualMonth = calcFDate();
+            const isFirstPaymentBonus = results.baddpay > 0 && (results.bmonth1 !== 0 || results.bmonth2 !== 0) &&
+                                     (firstPaymentActualMonth === results.bmonth1 || firstPaymentActualMonth === results.bmonth2);
+
+            let html = `<h3>計算結果</h3>`;
+            html += `
+            <div class="results-summary">
+                <div><p class="font-semibold">商品価格</p><p class="text-lg">${formatNumber(results.price)}円</p></div>
+                <div><p class="font-semibold">頭金</p><p class="text-lg">${formatNumber(results.dpay)}円</p></div>
+                <div><p class="font-semibold">分割対象金額</p><p class="text-lg">${formatNumber(results.advance)}円</p></div>
+                <div><p class="font-semibold">支払回数</p><p class="text-lg">${results.frequency}回</p></div>
+                <div>
+                    <p class="font-semibold" style="color: #ca0028;">手数料</p>
+                    <p class="text-lg">${formatNumber(results.interestAmount)}円 (実質年率に換算したものではありません)</p>
+                </div>
+            </div>
+
+            <div class="results-detail">
+                <div class="detail-header">
+                    <p class="font-bold">お支払い内訳</p>
+                    <p class="text-sm">※金額単位：円</p>
+                </div>
+                <table>
+                    <thead><tr><th>項目</th><th style="text-align: right;">金額</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>第1回目お支払い額${isFirstPaymentBonus ? "（ボーナス月）" : ""}</td>
+                            <td class="amount">${formatNumber(results.first)}円</td>
+                        </tr>`;
+
+            if (results.frequency > 1) {
+                let normalCountAfterFirst = 0;
+                let bonusCountAfterFirst = 0;
+
+                for (let k = 1; k < results.frequency; k++) {
+                    let paymentMonthOffset = (firstPaymentActualMonth - 1 + k) % 12;
+                    let actualPaymentMonthForThisIteration = paymentMonthOffset + 1;
+                    if (results.baddpay > 0 && (results.bmonth1 !== 0 || results.bmonth2 !== 0) &&
+                        (actualPaymentMonthForThisIteration === results.bmonth1 || actualPaymentMonthForThisIteration === results.bmonth2)) {
+                        bonusCountAfterFirst++;
+                    } else {
+                        normalCountAfterFirst++;
+                    }
+                }
+
+                if (normalCountAfterFirst > 0 && results.rest > 0) {
+                    html += `<tr>
+                                <td>通常回のお支払い額（×${normalCountAfterFirst}回）</td>
+                                <td class="amount">${formatNumber(results.rest)}円</td>
+                             </tr>`;
+                }
+                if (bonusCountAfterFirst > 0 && results.bonus > 0 && results.baddpay > 0) { // baddpay > 0 の条件も追加
+                    html += `<tr>
+                                <td>ボーナス月のお支払い額（×${bonusCountAfterFirst}回）</td>
+                                <td class="amount">${formatNumber(results.bonus)}円</td>
+                             </tr>`;
+                }
+            }
+
+            html += `
+                    </tbody>
+                </table>
+                <div class="total-amounts">
+                    <div class="total-item">
+                        <p>お支払い総額（頭金を含む）</p>
+                        <p>${formatNumber(results.total)}円</p>
+                    </div>
+                    <div class="total-item">
+                        <p>分割支払金合計</p>
+                        <p>${formatNumber(results.payment)}円</p>
+                    </div>
+                </div>
+            </div>`;
+            
+            if (results.rest < 3000 && results.rest > 0 && (results.frequency - results.bcount > 0) ) { // 通常支払いがある場合のみ
+                html += `<p class="warning">注：通常回のお支払い額が3,000円未満です。この条件ではお申し込みいただけない場合があります。</p>`;
+            }
+            if (results.first < 0) {
+                 html += `<p class="error">エラー：初回支払額がマイナスになりました。入力条件を見直してください。</p>`;
+            }
+            
+            resultsDiv.innerHTML = html;
+        }
+
+        function resetEMP() {
+            document.getElementById('emp-results').classList.add('hidden');
+        }
+
+        const inputFields = document.querySelectorAll('input[type="number"]');
+        inputFields.forEach(input => {
+            input.addEventListener('change', function() {
+                if (this.value === '') this.value = 0;
+                if (this.hasAttribute('min') && Number(this.value) < Number(this.getAttribute('min'))) this.value = this.getAttribute('min');
+                if (this.hasAttribute('max') && Number(this.value) > Number(this.getAttribute('max'))) this.value = this.getAttribute('max');
+            });
+        });
+    </script>
+</body>
+</html>
